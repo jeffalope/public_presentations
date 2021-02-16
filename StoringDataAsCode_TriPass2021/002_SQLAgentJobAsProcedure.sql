@@ -212,3 +212,17 @@ GO
 
 EXEC dbo.DeployJob_AvocadoToastProcessor;
 GO
+/***********************************************************************
+	Some additional considerations
+
+	1) Add a sql job/recurring process to routinue execute the procedure
+		to try to combat mistakes being made and not caught.
+
+	2) Add logic to deployment processes to recognize that static data
+		related to jobs was modified and might need to be refreshed.  
+
+	3) Create a single procedure that executes all of your jobs 
+		so that you can ensure none of them are missed.  It could be 
+		hardcoded or if you used fixed format you could just loop
+		over all the procedures with a given name format.
+***********************************************************************/

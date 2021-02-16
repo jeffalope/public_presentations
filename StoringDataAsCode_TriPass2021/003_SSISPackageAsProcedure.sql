@@ -192,3 +192,14 @@ GO
 ***********************************************************************/
 SELECT * FROM dbo.DestinationItem;
 GO
+/***********************************************************************
+	Some additional considerations
+
+	1) Add logic to deployment processes to recognize that static data
+		related to packages was modified and might need to be refreshed.  
+
+	2) Create a single procedure that executes all of your SSIS packages 
+		so that you can ensure none of them are missed.  It could be 
+		hardcoded or if you used fixed format you could just loop
+		over all the procedures with a given name format.
+***********************************************************************/
